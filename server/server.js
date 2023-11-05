@@ -34,11 +34,11 @@ const bannerRef = ref(storage, 'Banner');
 //declaring port and hostname
 
 let hostname = '127.0.0.1'
-let port = 5000
+let port = process.env.PORT || 3000
 
 
-expressApp.listen(port, hostname, () => {
-    console.log(`server running at http://${hostname}:${port}.`);
+expressApp.listen(port, () => {
+    console.log(`server running on port {port}.`);
 });
 
 
